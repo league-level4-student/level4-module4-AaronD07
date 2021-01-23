@@ -1,10 +1,8 @@
 package _01_introduction_to_encapsulation;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
-
+import org.junit.Test;
 
 /*
  * Encapsulation is a way of protecting the data in a class from being
@@ -32,11 +30,8 @@ public class EncapsulateTheData {
     public void setNumber(int num) {
         this.x = num;
     }
-    @Test
-	public void testGetter() {
-		assertEquals(6, setNumber(6));
-
-    }
+    
+	
 	//2. Create a new JUnit Test case and write tests to verify that 
 	//   the member variables' getters and setters are working
 	
