@@ -19,9 +19,18 @@ public abstract class Polymorph {
    	 this.y = y;
     }
     
-    public void update(){
-   	 
-    }
-    
+    public void update(Polymorph m) {
+		y=y+1;
+		x=x+1;
+		if(x>250&&y>250) {
+			for(int i=250; i>30; i--) {
+				
+			
+			x=x-1;
+			y=y-1;
+			}
+		}
+		
+	}
     public abstract void draw(Graphics g);
 }
