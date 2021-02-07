@@ -16,13 +16,20 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     public static final int HEIGHT = 600;
     
     private JFrame window;
-    private Timer timer;
-    ArrayList<Polymorph> p = new ArrayList<Polymorph>();
-    Polymorph m;
-    Polymorph bluePoly;
-    Polymorph redPoly;
+    private Timer timer;  
+    static ArrayList<Polymorph> morphs = new ArrayList<Polymorph>();
+    static BluePolymorph blue1 = new BluePolymorph(10, 10); 
+    static RedMorph red1 = new RedMorph(10, 50);
+    static MovingMorph moving1 = new MovingMorph(10, 100);
+    static CircleMorph circle1 = new CircleMorph(100, 100);
+   
     public static void main(String[] args) {
    	 new PolymorphWindow().buildWindow();
+   	 morphs.add(blue1);
+     morphs.add(red1);
+     morphs.add(moving1);
+     morphs.add(circle1);
+     	 new PolymorphWindow().buildWindow();
     }
     
     public void buildWindow(){
@@ -32,9 +39,6 @@ public class PolymorphWindow extends JPanel implements ActionListener{
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    	 window.pack();
    	 window.setVisible(true);
-   	 m=new MovingMorph(75, 50);
-   	 bluePoly = new BluePolymorph(50, 50);
-   	 redPoly = new RedMorph(10, 50);
    	 timer = new Timer(1000 / 30, this);
    	 timer.start();
     }
@@ -43,15 +47,19 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     //draw background
    	 g.setColor(Color.LIGHT_GRAY);
    	 g.fillRect(0, 0, 500, 500);
-   	redPoly.draw(g);
-   	m.draw(g);
+   	 for(int i=0; i<morphs.size(); i++) {
+   		 morphs.get(i).draw(g);
+   	 }
    	 //draw polymorph
-   	 bluePoly.draw(g);
+   	
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+      
+      		 morphs.get(2).update(moving1);
+      		 morphs.get(3).update2(circle1);
    	 repaint();
-   	 m.update(m);
+   	 
     }
 }

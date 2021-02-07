@@ -32,5 +32,20 @@ public abstract class Polymorph {
 		}
 		
 	}
+    public void update2(Polymorph m) {
+    	x=x+1;
+    	if(x>400) {
+    		y=y+1;
+    		if(y>400) {
+    			x=x-1;
+    			if(x<100) {
+    				y=y-1;
+    				
+    			}
+    		}
+    	}
+    }
+
+ 
     public abstract void draw(Graphics g);
 }
