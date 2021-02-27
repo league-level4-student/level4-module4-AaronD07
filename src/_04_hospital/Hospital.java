@@ -1,6 +1,6 @@
 package _04_hospital;
 
-public abstract class Hospital {
+public class Hospital {
 
 	public void addDoctor(GeneralPractitioner generalPractitioner) {
 		// TODO Auto-generated method stub
