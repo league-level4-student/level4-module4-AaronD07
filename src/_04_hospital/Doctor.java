@@ -21,19 +21,12 @@ public class Doctor {
 		if(patients.size()<3) {
 			patients.add(patient);
 		}
-		if(patients.size()==3) {
+		else if(patients.size()==3) {
 		throw new DoctorFullException();
 	}
 		return false;
 }
 
-		
-	
-			
-		
-		
-
-		
 	public ArrayList<Patient> getPatients() {
 		// TODO Auto-generated method stub
 		return patients;
