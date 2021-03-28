@@ -16,11 +16,24 @@ public class Doctor {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public void assignPatient(Patient patient) {
+	public boolean assignPatient(Patient patient) throws DoctorFullException {
 		// TODO Auto-generated method stub
-		
-		patients.add(patient);
+		if(patients.size()<3) {
+			patients.add(patient);
+		}
+		if(patients.size()==3) {
+		throw new DoctorFullException();
 	}
+		return false;
+}
+
+		
+	
+			
+		
+		
+
+		
 	public ArrayList<Patient> getPatients() {
 		// TODO Auto-generated method stub
 		return patients;
@@ -35,3 +48,4 @@ patients.get(i).feelsCaredFor=true;
 	}
 	}
 }
+
